@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 public class HomeHuman {
 	@RequestMapping("/")
-    public String index(@RequestParam(value="fname",defaultValue="Human", required=false) String fname, @RequestParam(value="lname",defaultValue="", required=false) String lname) {
-        return ("Hello: " + fname+" "+ lname);
+    public String index(@RequestParam(value="fname",defaultValue="Human", required=false) String fname, @RequestParam(value="lname",defaultValue="", required=false) String lname, @RequestParam(value="times",defaultValue="1", required=false) int num) {
+        return (("Hello: " + fname+" "+ lname).repeat(num));
     }
 }
